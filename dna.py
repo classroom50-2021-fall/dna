@@ -46,5 +46,6 @@ def longest_match(sequence, subsequence):
     # After checking for runs at each character in seqeuence, return longest run found
     return longest_run
 
+# When dna.py is run directly, execute main
 if __name__ == "__main__":
     main()
