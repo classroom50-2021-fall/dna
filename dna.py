@@ -2,9 +2,12 @@ import csv
 import sys
 
 def main():
-    # TODO: Check for proper usage
 
-    # TODO: Read database file and DNA sequence file
+    # TODO: Check for command-line usage
+
+    # TODO: Read database file into a variable
+    
+    # TODO: Read DNA sequence file into a variable
 
     # TODO: Find longest match of each STR in DNA sequence
 
@@ -17,26 +20,29 @@ def longest_match(sequence, subsequence):
 
     # Initialize variables
     longest_run = 0
-    subseq_length = len(subsequence)
-    seq_length = len(sequence)
+    subsequence_length = len(subsequence)
+    sequence_length = len(sequence)
 
     # Check each character in sequence for most consecutive runs of subsequence
-    for i in range(seq_length):
+    for i in range(sequence_length):
 
+        # Initialize count of consecutive runs
         count = 0
 
-        # Check for a match and continue checking until out of consecutive matches
+        # Check for a subsequence match in a "substring" (a subset of characters) within sequence
+        # If a match, move substring to next potential match in sequence
+        # Continue moving substring and checking for matches until out of consecutive matches
         while True:
 
-            # Adjust window start and end
-            start = i + count * subseq_length
-            end = start + subseq_length
+            # Adjust substring start and end
+            start = i + count * subsequence_length
+            end = start + subsequence_length
 
-            # If there is a match in the window
+            # If there is a match in the substring
             if sequence[start:end] == subsequence:
                 count += 1
             
-            # If there is no match in the window
+            # If there is no match in the substring
             else:
                 break
         
@@ -46,6 +52,5 @@ def longest_match(sequence, subsequence):
     # After checking for runs at each character in seqeuence, return longest run found
     return longest_run
 
-# When dna.py is run directly, execute main
-if __name__ == "__main__":
-    main()
+
+main()
