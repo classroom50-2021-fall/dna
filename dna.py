@@ -1,6 +1,7 @@
 import csv
 import sys
 
+
 def main():
 
     # TODO: Check for command-line usage
@@ -14,6 +15,7 @@ def main():
     # TODO: Check database for matching profiles
 
     return
+
 
 def longest_match(sequence, subsequence):
     """Returns length of longest run of subsequence in sequence."""
